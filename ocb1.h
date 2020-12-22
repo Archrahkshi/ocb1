@@ -9,6 +9,9 @@
 
 #define TAU 64
 
+using namespace std;
+
+
 // block cipher (AES128)
 bitstr E(const bytestr &key, const bitstr &open_text);
 bitstr D(const bytestr &key, const bitstr &ciphertext);
