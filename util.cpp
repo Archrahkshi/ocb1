@@ -95,7 +95,7 @@ bitstr shr(const bitstr &bitstring) {
 
 bitstr mul_by_x(const bitstr &bitstring) {
     bitstr result = shl(bitstring);
-    if (bitstring.front() == 1) {
+    if (bitstring.front()) {
         bitstr xor_by = bitstr(120); // assuming bitstring is a 128-bit string
         xor_by.push_back(1);
         xor_by.push_back(0);
@@ -121,7 +121,7 @@ bitstr mul_by_xn(const bitstr &bitstring, const int n) {
 
 bitstr div_by_x(const bitstr &bitstring) {
     bitstr result = shr(bitstring);
-    if (bitstring.front() == 1) {
+    if (bitstring.front()) {
         bitstr xor_by = bitstr(120); // assuming bitstring is a 128-bit string
         xor_by.insert(xor_by.begin(), 1);
         xor_by.push_back(1);
@@ -137,8 +137,7 @@ bitstr div_by_x(const bitstr &bitstring) {
 }
 
 bitstr len(const int n, const bitstr &bitstring) {
-    unsigned long tmp = bitstring.size();
-    return dec2bitstr(n, tmp);
+    return dec2bitstr(n, bitstring.size());
 }
 
 bitstr concat(const bitstr &bitstring1, const bitstr &bitstring2) {
