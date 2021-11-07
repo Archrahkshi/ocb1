@@ -1,9 +1,12 @@
-# Реализация режима шифрования OCB1 на языке C++
+# ocb1
 
-Сборка и запуск:
+Implementation of the OCB1 encryption mode for block ciphers in C++.
+
+Build & run:
 
 ```
-cmake CMakeLists.txt
+mkdir build && cd build
+cmake ..
 make
 ./pazi2
 ```
